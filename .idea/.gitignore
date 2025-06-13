@@ -1,0 +1,24 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Maven build output
+/target/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# HTTP Client (facultatif si tu ne l'utilises pas)
+.httpRequests/
+
+# JetBrains shelf + workspace
+/shelf/
+/workspace.xml
+
+# Datasource local storage
+/dataSources/
+/dataSources.local.xml
