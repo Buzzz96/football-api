@@ -150,16 +150,10 @@ Environ **10 à 12 heures** :
 
 ---
 
-## 📬 Livraison
 
-Merci de retourner ce projet à :
-
-```
-contact@matawan-services.com
-```
 
 ---
 
 ## 👤 Auteur
 
-Antonio Gerges — Étudiant développeur Java / Spring Boot
+Antonio Gerges — Software developer Java / Spring Boot
