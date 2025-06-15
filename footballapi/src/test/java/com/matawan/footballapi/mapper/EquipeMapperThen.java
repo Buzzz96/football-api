@@ -5,14 +5,12 @@ import com.matawan.footballapi.dto.JoueurDto;
 import com.tngtech.jgiven.Stage;
 import com.tngtech.jgiven.annotation.As;
 import com.tngtech.jgiven.annotation.ExpectedScenarioState;
-import com.tngtech.jgiven.integration.spring.JGivenStage;
 import org.assertj.core.api.Assertions;
 import org.springframework.stereotype.Component;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @Component
-@JGivenStage
 public class EquipeMapperThen extends Stage<EquipeMapperThen> {
 
     @ExpectedScenarioState

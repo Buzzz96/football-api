@@ -5,12 +5,11 @@ import com.matawan.footballapi.entity.Joueur;
 import com.tngtech.jgiven.Stage;
 import com.tngtech.jgiven.annotation.As;
 import com.tngtech.jgiven.annotation.ProvidedScenarioState;
-import com.tngtech.jgiven.integration.spring.JGivenStage;
 import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-@JGivenStage
+
 public class EquipeMapperGiven extends Stage<EquipeMapperGiven> {
 
     @ProvidedScenarioState

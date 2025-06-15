@@ -63,6 +63,11 @@ public class EquipeService {
 
     private static final Logger logger = LoggerFactory.getLogger(EquipeService.class);
 
+    public void deleteEquipe(Long id) {
+        Equipe equipe = equipeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Équipe non trouvée avec id: " + id));
+        equipeRepository.delete(equipe);
+    }
 
 
 }

@@ -26,7 +26,7 @@
                 }
               ],
               "status": "PASSED",
-              "durationInNanos": 9838700,
+              "durationInNanos": 5956000,
               "depth": 0,
               "parentFailed": false
             },
@@ -42,7 +42,7 @@
                 }
               ],
               "status": "PASSED",
-              "durationInNanos": 1343500,
+              "durationInNanos": 944600,
               "depth": 0,
               "parentFailed": false
             },
@@ -58,7 +58,7 @@
                 }
               ],
               "status": "PASSED",
-              "durationInNanos": 66949200,
+              "durationInNanos": 44851800,
               "depth": 0,
               "parentFailed": false
             }
@@ -66,10 +66,10 @@
           "explicitArguments": [],
           "derivedArguments": [],
           "status": "SUCCESS",
-          "durationInNanos": 99531100
+          "durationInNanos": 67105200
         }
       ],
-      "durationInNanos": 99531100,
+      "durationInNanos": 67105200,
       "executionStatus": "SUCCESS"
     },
     {
@@ -96,7 +96,7 @@
                 }
               ],
               "status": "PASSED",
-              "durationInNanos": 781900,
+              "durationInNanos": 523000,
               "depth": 0,
               "parentFailed": false
             },
@@ -112,7 +112,7 @@
                 }
               ],
               "status": "PASSED",
-              "durationInNanos": 353900,
+              "durationInNanos": 317500,
               "depth": 0,
               "parentFailed": false
             },
@@ -128,7 +128,7 @@
                 }
               ],
               "status": "FAILED",
-              "durationInNanos": 10208200,
+              "durationInNanos": 6285200,
               "depth": 0,
               "parentFailed": false
             }
@@ -138,10 +138,10 @@
           "status": "FAILED",
           "errorMessage": "org.opentest4j.AssertionFailedError: \r\nexpected: \"Real Madrid\"\r\n but was: \"Paris Saint-Germain\"",
           "stackTrace": [
-            "com.matawan.footballapi.mapper.EquipeMapperThen.resultatInvalide(EquipeMapperThen.java:51)",
-            "com.matawan.footballapi.mapper.EquipeMapperThen$ByteBuddy$ElrxWyD6.resultatInvalide$accessor$sv9Kzzzg(Unknown Source)",
-            "com.matawan.footballapi.mapper.EquipeMapperThen$ByteBuddy$ElrxWyD6$auxiliary$chSyxjwP.call(Unknown Source)",
-            "com.matawan.footballapi.mapper.EquipeMapperThen$ByteBuddy$ElrxWyD6.resultatInvalide(Unknown Source)",
+            "com.matawan.footballapi.mapper.EquipeMapperThen.resultatInvalide(EquipeMapperThen.java:37)",
+            "com.matawan.footballapi.mapper.EquipeMapperThen$ByteBuddy$FoSyjUk8.resultatInvalide$accessor$HUBRraiB(Unknown Source)",
+            "com.matawan.footballapi.mapper.EquipeMapperThen$ByteBuddy$FoSyjUk8$auxiliary$H2UtCjcK.call(Unknown Source)",
+            "com.matawan.footballapi.mapper.EquipeMapperThen$ByteBuddy$FoSyjUk8.resultatInvalide(Unknown Source)",
             "com.matawan.footballapi.mapper.EquipeMapperTest.testMappingAvecAssertionsFausses(EquipeMapperTest.java:24)",
             "java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)",
             "org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:775)",
@@ -216,10 +216,10 @@
             "com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)",
             "com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)"
           ],
-          "durationInNanos": 12490500
+          "durationInNanos": 8158500
         }
       ],
-      "durationInNanos": 12490500
+      "durationInNanos": 8158500
     }
   ],
   "tagMap": {}

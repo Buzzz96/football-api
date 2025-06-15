@@ -65,4 +65,12 @@ public class EquipeController {
         return ResponseEntity.status(HttpStatus.CREATED).body(savedDto);
     }
 
+    // DELETE /equipes/{id}
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteEquipe(@PathVariable Long id) {
+        equipeService.deleteEquipe(id);
+        return ResponseEntity.noContent().build();
+    }
+
+
 }
