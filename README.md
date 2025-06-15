@@ -100,9 +100,16 @@ cd football-api
 ```
 
 
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) installé
+- Git (ou téléchargement du projet .zip)
+
 ---
 
 ### 2. 🚀 Lancer le projet
+
+⚠️ **Assurez-vous que Docker Desktop est bien lancé avant d'exécuter la commande suivante.**  
+Sinon, le build échouera ou restera bloqué car le moteur Docker ne sera pas accessible.
 
 ```bash
 docker-compose up --build
