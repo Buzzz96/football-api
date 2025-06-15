@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    container_name: football-api
+    ports:
+      - "8080:8080"
+    volumes:
+      - h2-data:/app/data
+volumes:
+  h2-data:
