@@ -46,6 +46,7 @@ public class EquipeController {
         return equipeService.getAllEquipes(pageable);
     }
 
+    // GET /equipes
     @GetMapping("/search")
     public List<EquipeDto> searchEquipe(
             @RequestParam(required = false) String name,

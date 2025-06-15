@@ -81,13 +81,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- JGiven JUnit 5 -->
-		<dependency>
-			<groupId>com.tngtech.jgiven</groupId>
-			<artifactId>jgiven-junit5</artifactId>
-			<version>1.2.0</version>
-			<scope>test</scope>
-		</dependency>
+
 
 		<!-- JGiven Core -->
 		<dependency>
@@ -97,16 +91,6 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- JGiven support pour Spring (facultatif si tu fais des tests Spring d'intégration plus tard) -->
-
-		<dependency>
-			<groupId>com.tngtech.jgiven</groupId>
-			<artifactId>jgiven-junit5</artifactId>
-			<version>1.3.1</version>
-			<scope>test</scope>
-		</dependency>
-
-
-
 
 
 		<!-- Test -->

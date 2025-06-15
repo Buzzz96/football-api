@@ -38,6 +38,8 @@ Le directeur sportif du club souhaite une interface API permettant de :
 | Lombok           | 1.18.30        | Génération automatique du code         |
 | JUnit 5          |                | Framework de tests                     |
 | JGiven           | 1.3.1          | Tests BDD (Given / When / Then)        |
+| Conteneurisation     | Docker + Docker Compose                  | Facile à exécuter sur n’importe quelle machine |
+
 
 ---
 
@@ -63,9 +65,52 @@ src
     └──  FootballApiApplicationTests
 ```
 
+## 🐳 Conteneurisation avec Docker
+
+Le projet est entièrement **conteneurisé** pour :
+
+- Éviter toute installation locale complexe
+- Rendre le projet **reproductible**, peu importe l’OS
+- Permettre à n’importe qui de lancer l’API en une commande
+
 ---
 
-## ⚙️ Installation
+## 📁 Structure Docker
+
+- `Dockerfile` : construit une image Java minimaliste (alpine)
+- `docker-compose.yml` : définit le service `app`, monte un **volume Docker** pour conserver les données H2 même après arrêt
+
+### 🔐 Persistance des données
+
+Les données H2 sont enregistrées dans `/app/data`, monté vers un **volume Docker (`h2-data`)**.  
+👉 Cela garantit que les données ne sont pas perdues même après `docker-compose down`.
+
+---
+
+## ▶️ Installation et exécution avec Docker
+
+### 1. ✅ Prérequis
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) installé
+- Git (ou téléchargement du projet .zip)
+
+```bash
+git clone https://github.com/Buzzz96/football-api.git
+cd football-api
+```
+
+
+---
+
+### 2. 🚀 Lancer le projet
+
+```bash
+docker-compose up --build
+```
+
+---
+
+## ⚙️ Installation sans Docker
 
 ### 1. Prérequis
 - Java 21 installé
@@ -77,6 +122,7 @@ src
 git clone https://github.com/Buzzz96/football-api.git
 cd football-api
 ```
+
 
 ### 3. Compilation du projet
 ```bash

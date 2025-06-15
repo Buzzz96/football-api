@@ -19,7 +19,6 @@ public class Equipe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @NotBlank(message = "Le nom est obligatoire")
     private String name;
     private String acronym;
     private Double budget;
