@@ -8,6 +8,11 @@ import com.tngtech.jgiven.annotation.ProvidedScenarioState;
 import org.springframework.stereotype.Component;
 import java.util.List;
 
+
+/**
+ * Étape Given pour les tests JGiven.
+ * Prépare une entité Equipe avec un joueur pour les scénarios de test.
+ */
 @Component
 
 public class EquipeMapperGiven extends Stage<EquipeMapperGiven> {
@@ -15,6 +20,9 @@ public class EquipeMapperGiven extends Stage<EquipeMapperGiven> {
     @ProvidedScenarioState
     Equipe equipe;
 
+    /**
+     * Crée une équipe avec ses attributs remplis et un joueur associé.
+     */
     @As("une équipe avec nom, budget, acronyme et un joueur existe")
     public EquipeMapperGiven uneEquipeExiste() {
         Joueur joueur = new Joueur();

@@ -10,12 +10,18 @@ import org.springframework.stereotype.Component;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
+/**
+ * Étape Then pour valider les résultats d’un mapping DTO dans les tests JGiven.
+ */
 @Component
 public class EquipeMapperThen extends Stage<EquipeMapperThen> {
 
     @ExpectedScenarioState
     EquipeDto equipeDto;
 
+    /**
+     * Vérifie que le DTO a bien été mappé avec les valeurs attendues.
+     */
     @As("le DTO est correctement rempli")
     public EquipeMapperThen leResultatEstValide() {
         Assertions.assertThat(equipeDto).isNotNull();
@@ -31,6 +37,9 @@ public class EquipeMapperThen extends Stage<EquipeMapperThen> {
         return self();
     }
 
+    /**
+     * Méthode de test illustratif pour simuler un échec (non utilisée en vrai test positif).
+     */
     @As("le DTO contient des informations erronées")
     public EquipeMapperThen resultatInvalide() {
         assertThat(equipeDto).isNotNull();
@@ -42,7 +51,6 @@ public class EquipeMapperThen extends Stage<EquipeMapperThen> {
         assertThat(joueurDto.getName()).isEqualTo("Benzema");
         assertThat(joueurDto.getPosition()).isEqualTo("Avant-centre");
 
-//        System.out.println("On prétend que l’équipe s'appelle Real Madrid (mais on ne vérifie pas)");
         return self();
     }
 

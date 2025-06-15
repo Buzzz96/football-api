@@ -11,6 +11,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+/**
+ * Étape When pour déclencher le mapping d'une entité Equipe vers son DTO.
+ */
 @Component
 public class EquipeMapperWhen extends Stage<EquipeMapperWhen> {
 
@@ -22,12 +25,18 @@ public class EquipeMapperWhen extends Stage<EquipeMapperWhen> {
 
     private final EquipeMapper equipeMapper = Mappers.getMapper(EquipeMapper.class);
 
+    /**
+     * Effectue le mapping de l'entité vers le DTO (version 1).
+     */
     @As("on convertit l'entité en DTO")
     public EquipeMapperWhen leMappingEstEffectue() {
         equipeDto = equipeMapper.toDto(equipe);
         return self();
     }
 
+    /**
+     * Effectue le mapping de l'entité vers le DTO (version alternative).
+     */
     @As("on effectue le mapping de l'équipe en DTO")
     public EquipeMapperWhen mappingEquipe() {
         equipeDto = equipeMapper.toDto(equipe);

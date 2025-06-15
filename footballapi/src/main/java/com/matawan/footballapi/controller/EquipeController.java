@@ -16,7 +16,10 @@ import com.matawan.footballapi.dto.EquipeDto;
 import com.matawan.footballapi.mapper.EquipeMapper;
 import java.util.List;
 
-
+/**
+ * Contrôleur REST pour gérer les équipes de football.
+ * Fournit des endpoints pour consulter, ajouter, rechercher et supprimer des équipes.
+ */
 @RestController
 @RequestMapping("/equipes")
 public class EquipeController {
@@ -34,7 +37,14 @@ public class EquipeController {
         this.equipeMapper = equipeMapper;
     }
 
-
+    /**
+     * Récupère toutes les équipes avec pagination et tri.
+     *
+     * @param page numéro de page (défaut : 0)
+     * @param size taille de la page (défaut : 5)
+     * @param sort tableau contenant le champ et la direction du tri (ex : ["name","asc"])
+     * @return page d’équipes
+     */
     @GetMapping
     public Page<Equipe> getEquipes(
             @RequestParam(defaultValue = "0") int page,
@@ -46,7 +56,15 @@ public class EquipeController {
         return equipeService.getAllEquipes(pageable);
     }
 
-    // GET /equipes
+
+    /**
+     * Recherche les équipes selon le nom et/ou l’intervalle de budget.
+     *
+     * @param name nom partiel (optionnel)
+     * @param minBudget budget min (optionnel)
+     * @param maxBudget budget max (optionnel)
+     * @return liste filtrée des équipes
+     */
     @GetMapping("/search")
     public List<EquipeDto> searchEquipe(
             @RequestParam(required = false) String name,
@@ -56,7 +74,12 @@ public class EquipeController {
     }
 
 
-    // POST /equipes
+    /**
+     * Ajoute une nouvelle équipe (avec ou sans joueurs).
+     *
+     * @param dto données de l’équipe à créer
+     * @return l’équipe créée (DTO) avec statut 201
+     */
     @PostMapping
     public ResponseEntity<EquipeDto> addEquipe(@Valid @RequestBody EquipeDto dto) {
         Equipe equipe = equipeMapper.toEntity(dto);
@@ -66,7 +89,12 @@ public class EquipeController {
         return ResponseEntity.status(HttpStatus.CREATED).body(savedDto);
     }
 
-    // DELETE /equipes/{id}
+    /**
+     * Supprime une équipe par son identifiant.
+     *
+     * @param id identifiant de l’équipe
+     * @return réponse vide avec statut 204
+     */
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteEquipe(@PathVariable Long id) {
         equipeService.deleteEquipe(id);

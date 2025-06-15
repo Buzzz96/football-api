@@ -1,10 +1,11 @@
 services:
   app:
-    build: .
-    container_name: football-api
+    build: .                            # Construit l'image à partir du Dockerfile local
+    container_name: football-api        # Nom du conteneur
     ports:
-      - "8080:8080"
+      - "8080:8080"                     # Expose le port 8080 de l'hôte vers le conteneur
     volumes:
-      - h2-data:/app/data
+      - h2-data:/app/data               # Volume nommé pour les données H2 persistantes
+
 volumes:
-  h2-data:
+  h2-data:                              # Déclaration du volume Docker nommé

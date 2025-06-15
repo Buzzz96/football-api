@@ -10,9 +10,17 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Gestion centralisée des exceptions pour l’ensemble des contrôleurs REST.
+ */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-
+    /**
+     * Gère les erreurs de validation des champs (annotations @Valid).
+     *
+     * @param ex exception levée lors de la validation des entrées
+     * @return réponse avec code 400 et liste des messages d’erreur
+     */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, Object>> handleValidationErrors(MethodArgumentNotValidException ex) {
         List<String> errors = ex.getBindingResult()
@@ -27,7 +35,13 @@ public class GlobalExceptionHandler {
 
         return ResponseEntity.badRequest().body(body);
     }
-    // Bonus : handler générique
+
+    /**
+     * Gère toutes les autres exceptions non spécifiques (sécurité, null, etc.).
+     *
+     * @param ex exception levée
+     * @return réponse avec code 500 et message d’erreur générique
+     */
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, Object>> handleOtherErrors(Exception ex) {
         Map<String, Object> body = Map.of(

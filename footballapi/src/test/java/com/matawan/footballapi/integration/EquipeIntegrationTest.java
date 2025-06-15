@@ -20,6 +20,9 @@ import java.util.List;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+/**
+ * Tests d’intégration pour vérifier le bon fonctionnement des endpoints /equipes.
+ */
 @SpringBootTest
 @AutoConfigureMockMvc
 public class EquipeIntegrationTest {
@@ -33,12 +36,19 @@ public class EquipeIntegrationTest {
     @Autowired
     private EquipeRepository equipeRepository;
 
+
+    /**
+     * Nettoie la base avant chaque test.
+     */
     @BeforeEach
     void cleanDatabase() {
         equipeRepository.deleteAll();
     }
 
 
+    /**
+     * Vérifie qu’on peut ajouter une équipe avec des joueurs et recevoir une réponse 201.
+     */
     @Test
     void testAjoutEquipeAvecJoueurs_valide() throws Exception {
         // Construction du DTO
@@ -66,6 +76,9 @@ public class EquipeIntegrationTest {
                 .andExpect(jsonPath("$.joueurs.length()").value(2));
     }
 
+    /**
+     * Vérifie que le endpoint GET /equipes retourne bien la liste paginée.
+     */
     @Test
     void testGetEquipes_returnsListAndStatus200() throws Exception {
         Joueur joueur1 = new Joueur();

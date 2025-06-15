@@ -15,6 +15,10 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
+/**
+ * Service métier pour la gestion des équipes de football.
+ * Fournit les opérations principales : ajout, recherche, suppression et pagination.
+ */
 @Service
 public class EquipeService {
 
@@ -23,6 +27,12 @@ public class EquipeService {
     @Autowired
     private EquipeMapper equipeMapper;
 
+    /**
+     * Ajoute une nouvelle équipe en liant les joueurs à celle-ci.
+     *
+     * @param equipe l'entité à enregistrer
+     * @return l’équipe enregistrée en base
+     */
     public Equipe addEquipe(Equipe equipe) {
         if (equipe.getJoueurs() != null) {
             equipe.getJoueurs().forEach(joueur -> joueur.setEquipe(equipe));
@@ -34,7 +44,14 @@ public class EquipeService {
         return equipeRepository.save(equipe);
     }
 
-
+    /**
+     * Recherche d’équipes selon le nom et/ou un intervalle de budget.
+     *
+     * @param name       nom partiel de l’équipe
+     * @param minBudget  budget minimum
+     * @param maxBudget  budget maximum
+     * @return liste des équipes trouvées sous forme de DTOs
+     */
     public List<EquipeDto> searchEquipes(String name, Double minBudget, Double maxBudget) {
         List<Equipe> resultats;
 
@@ -51,7 +68,12 @@ public class EquipeService {
         return resultats.stream().map(equipeMapper::toDto).toList();
     }
 
-
+    /**
+     * Retourne toutes les équipes paginées.
+     *
+     * @param pageable configuration de pagination (page, taille, tri)
+     * @return page d’équipes
+     */
     public Page<Equipe> getAllEquipes(Pageable pageable) {
         Page<Equipe> page = equipeRepository.findAll(pageable);
         logger.info("Équipes retournées : page {}, taille {}, total éléments : {}",
@@ -63,6 +85,11 @@ public class EquipeService {
 
     private static final Logger logger = LoggerFactory.getLogger(EquipeService.class);
 
+    /**
+     * Supprime une équipe par son identifiant.
+     *
+     * @param id identifiant de l’équipe à supprimer
+     */
     public void deleteEquipe(Long id) {
         Equipe equipe = equipeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Équipe non trouvée avec id: " + id));
