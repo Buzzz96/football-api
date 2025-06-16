@@ -112,13 +112,13 @@ cd football-api
    Run one of the following commands:
 
 ```bash
-./mvnw clean package
+./mvnw clean package -DskipTests
 ```
 
 # OR if Maven is already installed:
 
 ```bash
-mvn clean package
+mvn clean package -DskipTests
 ```
 ⚠️ Ensure Docker Desktop is running before executing the command below.
 Otherwise, the build may fail or hang because the Docker engine will be inaccessible.
@@ -244,6 +244,7 @@ Total estimated time: **16 to 20 hours**, including:
 - 🧠 Designing the data model (entities `Equipe` and `Joueur`)
 - 🛠️ Developing the REST API (GET with pagination, POST with validation)
 - ✅ Validation with `@Valid`, `@NotBlank`, `@NotNull`
+- 🐳 Docker integration using a Dockerfile and docker-compose.yml to streamline execution and deployment
 - 🔬 Writing unit and integration tests (MockMvc, JGiven)
 - 🧪 Manual API testing via Postman
 - 📄 Writing documentation and installation guide

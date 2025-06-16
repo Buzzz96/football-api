@@ -134,13 +134,13 @@ cd football-api
 Exécutez :
 
 ```bash
-./mvnw clean package
+./mvnw clean package -DskipTests
 ```
 
 Ou, si vous avez Maven installé :
 
 ```bash
-mvn clean package
+mvn clean package -DskipTests
 ```
 
 ⚠️ **Assurez-vous que Docker Desktop est bien lancé avant d'exécuter la commande suivante.**  
@@ -304,6 +304,7 @@ Le développement de cette API a été réalisé sur une durée estimée de **16
 - 🧠 **Conception du modèle de données** (entités `Equipe` et `Joueur`)
 - 🛠️ **Développement de l’API REST** avec Spring Boot (GET paginé, POST avec validation)
 - ✅ **Mise en place des validations** (`@Valid`, `@NotBlank`, `@NotNull`) côté DTO et entités
+- 🐳 Intégration et configuration de Docker avec un Dockerfile et docker-compose.yml pour une exécution simple et portable du projet
 - 🔬 **Écriture des tests unitaires** avec JGiven (tests de mapping) et **tests d’intégration** avec MockMvc
 - 🧪 **Tests manuels** via Postman pour valider les cas d’usage réels
 - 📄 **Rédaction de la documentation** et du guide d’installation
