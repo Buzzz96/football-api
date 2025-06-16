@@ -1,5 +1,10 @@
 # ⚽ Football API – Manage the Nice Football Team (Ligue 1)
 
+[![Java](https://img.shields.io/badge/Java-21-blue)](https://www.oracle.com/java/)
+[![Spring Boot](https://img.shields.io/badge/SpringBoot-3.5.0-brightgreen)](https://spring.io/projects/spring-boot)
+[![Dockerized](https://img.shields.io/badge/Docker-ready-blue)](https://www.docker.com/)
+
+
 🇫🇷 [Version française disponible ici](README.md)
 
 This project is a REST API developed with **Spring Boot** to manage football teams, especially the **Nice** team in Ligue 1. The API allows:
@@ -60,11 +65,72 @@ src
         ├── mapper            → Unit tests (EquipeMapperTest) + JGiven (G/W/T)
         ├── service           → Unit tests (EquipeServiceTest)
         └── FootballApiApplicationTests
+📦 docker-compose.yml      → Container configuration file (build + run)  
+🐳 Dockerfile              → Docker image for the application
+
+```
+
+
+## 🐳 Containerization with Docker
+
+The project is fully **containerized** in order to:
+
+- Avoid any complex local setup
+- Make the project reproducible regardless of the operating system
+- Allow anyone to launch the API with a single command
+
+---
+
+## 📁 Docker Structure
+
+- `Dockerfile`: builds a minimal Java image (based on Alpine)
+- `docker-compose.yml`: defines the `app` service, mounts a **Docker volume** to persist H2 data even after shutdown
+
+---
+
+### 🔐 Data Persistence
+
+H2 database files are stored inside `/app/data`, which is mounted to a **Docker volume (`h2-data`)**.  
+👉 This ensures that your data is not lost even after running `docker-compose down`.
+
+---
+
+## ▶️ Installation and Execution with Docker
+
+### 1. ✅ Prerequisites
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) installed
+- Git (or download the project as a .zip)
+
+```bash
+git clone https://github.com/Buzzz96/football-api.git
+cd football-api
+
+```
+2. 🚀 Run the project
+   ⚠️ Before running docker-compose up, make sure the .jar file exists.
+   Run one of the following commands:
+
+```bash
+./mvnw clean package
+```
+
+# OR if Maven is already installed:
+
+```bash
+mvn clean package
+```
+⚠️ Ensure Docker Desktop is running before executing the command below.
+Otherwise, the build may fail or hang because the Docker engine will be inaccessible.
+
+```bash
+docker-compose up --build
+
 ```
 
 ---
 
-## ⚙️ Installation
+## ⚙️ Installation without docker
 
 ### 1. Prerequisites
 - Java 21 installed
