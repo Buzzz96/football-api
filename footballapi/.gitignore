@@ -36,3 +36,7 @@ build/
 data/
 *.log
 *.jar
+
+# Fichiers générés à ne pas versionner
+footballapi/data/
+footballapi/jgiven-reports/
