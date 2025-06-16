@@ -112,13 +112,13 @@ cd football-api
    Run one of the following commands:
 
 ```bash
-./mvnw clean package
+./mvnw clean package -DskipTests
 ```
 
 # OR if Maven is already installed:
 
 ```bash
-mvn clean package
+mvn clean package -DskipTests
 ```
 ⚠️ Ensure Docker Desktop is running before executing the command below.
 Otherwise, the build may fail or hang because the Docker engine will be inaccessible.
