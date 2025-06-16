@@ -1,6 +1,26 @@
 # ⚽ Football API – Gestion de l'équipe de Nice (Ligue 1)
 
+[![Java](https://img.shields.io/badge/Java-21-blue)](https://www.oracle.com/java/)
+[![Spring Boot](https://img.shields.io/badge/SpringBoot-3.5.0-brightgreen)](https://spring.io/projects/spring-boot)
+[![Dockerized](https://img.shields.io/badge/Docker-ready-blue)](https://www.docker.com/)
+
 en [English version available here](README.en.md)
+
+## 🔍 Sommaire
+
+- [Objectif](#-objectif)
+- [Technologies utilisées](#-technologies-utilisées)
+- [Structure du projet](#-structure-du-projet)
+- [Conteneurisation avec Docker](#-conteneurisation-avec-docker)
+- [Structure Docker](#-structure-docker)
+- [Installation et exécution avec Docker](#-installation-et-exécution-avec-docker)
+- [Installation sans Docker](#-installation-sans-docker)
+- [Utilisation de l’API](#-utilisation-de-lapi-via-postman-et-navigateur)
+- [Choix techniques](#-choix-techniques)
+- [Temps estimé passé sur le projet](#-temps-estimé-passé-sur-le-projet)
+- [Démarche de développement](#-démarche-de-développement)
+- [Tests](#-tests)
+- [Auteur](#-auteur)
 
 
 Ce projet est une API REST développée avec **Spring Boot** permettant de gérer les équipes de football, notamment l'équipe de **Nice** en Ligue 1. L’API permet :
@@ -63,6 +83,8 @@ src
     ├──  mapper            → Tests unitaires (EquipeMapperTest) + JGiven (Given/When/Then)
     ├──  service           → Tests unitaires (EquipeServiceTest)
     └──  FootballApiApplicationTests
+📦 docker-compose.yml      → Fichier de configuration du conteneur (build + exécution)
+🐳 Dockerfile              → Image Docker de l’application
 ```
 
 ## 🐳 Conteneurisation avec Docker
@@ -107,6 +129,19 @@ cd football-api
 ---
 
 ### 2. 🚀 Lancer le projet
+
+⚠️ Avant de lancer `docker-compose up`, assurez-vous que le fichier `.jar` existe :
+Exécutez :
+
+```bash
+./mvnw clean package
+```
+
+Ou, si vous avez Maven installé :
+
+```bash
+mvn clean package
+```
 
 ⚠️ **Assurez-vous que Docker Desktop est bien lancé avant d'exécuter la commande suivante.**  
 Sinon, le build échouera ou restera bloqué car le moteur Docker ne sera pas accessible.
